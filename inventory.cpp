@@ -1,6 +1,6 @@
 #include <iostream>
 #include "inventory.h"
-#include <assert.h>
+#include <cassert>
 
 // Default constructor
 inventory::inventory()

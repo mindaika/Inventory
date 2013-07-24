@@ -9,17 +9,17 @@
 #include <crtdbg.h>
 #endif
 
-using namespace std;
+// MODIFIED FROM ORIGINAL SOURCE
 
 void AddItem(inventory& inv,char* name,double weight)
 {
-	cout << "Adding " << name << " with a weight of " << weight << "." << endl;
+	std::cout << "Adding " << name << " with a weight of " << weight << "." << std::endl;
 	inv.AddItem(item(name,weight));
 }
 
 void RemoveItem(inventory& inv,char* name)
 {
-	cout << "Removing " << name << "." << endl;
+	std::cout << "Removing " << name << "." << std::endl;
 	inv.RemoveItem(name);
 }
 
@@ -68,9 +68,11 @@ int main() {
 
 #ifdef _WIN32
 	if (_CrtDumpMemoryLeaks()) {
-		cout << "Memory leaks!" << endl;
+		std::cout << "Memory leaks!" << std::endl;
 	}
 #endif
 
+	std::cout << "Press Return to exit...";
+	getchar();
 	return 0;
 }
